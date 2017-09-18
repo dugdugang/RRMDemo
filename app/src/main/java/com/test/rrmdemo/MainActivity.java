@@ -15,7 +15,7 @@ import retrofit2.Response;
 
 public class MainActivity extends AppCompatActivity {
     @BindView(R.id.result)
-     TextView result;
+    TextView result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         retrofitTest();
     }
 
+
+
     private void retrofitTest() {
 //        Subscription subscription= NetService.getNetApi()
 //                .getBook("金瓶梅", null, "0", 1)
@@ -33,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
         call.enqueue(new Callback<Book>() {
             @Override
             public void onResponse(Call<Book> call, Response<Book> response) {
-                result.setText(response.body().toString()+"");
+                result.setText(response.body().toString() + "");
             }
 
             @Override
