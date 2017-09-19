@@ -4,6 +4,7 @@ import com.test.rrmdemo.entities.Book;
 
 import java.util.Map;
 
+import io.reactivex.Observable;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.Field;
@@ -22,10 +23,10 @@ import retrofit2.http.QueryMap;
 
 public interface NetApi {
     @GET("book/search")
-    Call<Book> getBook(@Query("q") String name,
-                       @Query("tag") String tag,
-                       @Query("start") String start,
-                       @Query("count") int count);
+    Observable<Book> getBook(@Query("q") String name,
+                             @Query("tag") String tag,
+                             @Query("start") String start,
+                             @Query("count") int count);
 
     @GET("book/search")
     Call<Book> getBook(@QueryMap Map<String, String> map);
